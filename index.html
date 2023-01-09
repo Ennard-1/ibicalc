@@ -1,162 +1,101 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta
-      name="viewport"
-      content="width
-     =device-width, initial-scale=1"
-    />
-    <title>Calculo de ficha</title>
-    <meta name="Ibicalc" content="#aa7700" />
-    <meta name="theme-color" content="black" />
 
-    <!-- Manifest File link -->
-    <link rel="manifest" href="manifest.json" />
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-    <style type="text/css" media="all">
-      body {
-        font-family: Monospace;
-        background-color:black;
-        color: white;
-      }
-      }
-      h1 {
-        text-align: center;
-        font-size: 20;
-      }
-      label {
-        text-align: left;
-        border: 2px solid black;
-        font-size: 20px;
-      }
-      input {
-        font-size: 20px;
-        text-align: center;
-        background-color: black;
-        border: none;
-        border-bottom: 2px solid white;
-        width: 40px;
-        padding: 12px 12px;
-        color: white;
-      }
-      table {
-        font-size: 20px;
-        width: 100%;
-        border: 1px solid black;
-      }
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width
+     =device-width, initial-scale=1" />
+  <title>Calculo de ficha</title>
+  <meta name="Ibicalc" content="#aa7700" />
+  <meta name="theme-color" content="black" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="manifest" href="images/site.webmanifest">
+  <link rel="stylesheet" href="style.css">
+  </link>
+  <script src="script.js"></script>
 
-      table-row {
-        display: flex;
-        width: 100%;
-      }
-      table-data {
-        width: 100%;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Calculadora de status</h1>
+</head>
 
-    <label for="level">Level:</label>
-    <input type="number" id="level" value="1" />
-    <br />
-    <label for="Corpo">Corpo</label>
-    <input type="number" id="corpo" value="1" />
-    <br />
-    <label for="Técnica">Técnica:</label>
-    <input type="number" id="tecnica" value="1" />
-    <br />
-    <label for="intelecto">Intelecto:</label>
-    <input type="number" id="intelecto" value="1" />
-    <br />
-    <label for="presença">Presença:</label>
-    <input type="number" id="presença" value="1" />
+<body>
+  <div id="topbar">
+    <h1>Ibicalc</h1>
 
-    <table>
-      <tr>
-        <td>Vida:</td>
-        <td id="vida"></td>
-      </tr>
-      <tr>
-        <td>Atordoamento:</td>
-        <td id="atordoamento"></td>
-      </tr>
-      <tr>
-        <td>Controle:</td>
-        <td id="controle"></td>
-      </tr>
-      <tr>
-        <td>Sanidade:</td>
-        <td id="sanidade"></td>
-      </tr>
-      <tr>
-        <td>Pe:</td>
-        <td id="pe"></td>
-      </tr>
-      <tr>
-        <td>Agilidade</td>
-        <td id="agilidade"></td>
-      </tr>
-    </table>
-    <script type="text/javascript" charset="utf-8">
-      //update das contas
-      document.addEventListener("click", update);
+    <img id="ibiporalogo" src="images/Ibiporã-black-logo.png" width="10%">
+  </div>
+  <div id="main">
+    <div id="inputs">
+      <label for="level">Level:</label>
+      <br>
+      <input type="text" pattern="number" id="level" value="1" />
+      <br />
+      <label for="Corpo">Corpo</label>
+      <br>
+      <input type="text" pattern="number" id="corpo" value="1" />
+      <br />
+      <label for="Técnica">Técnica:</label>
+      <br>
+      <input type="text" pattern="number" id="tecnica" value="1" />
+      <br />
+      <label for="intelecto">Intelecto:</label>
+      <br>
+      <input type="text" pattern="number" id="intelecto" value="1" />
+      <br />
+      <label for="presença">Presença:</label>
+      <br>
+      <input type="text" pattern="number" id="presença" value="1" />
+    </div>
 
-      function update() {
-        //atualização dos inputs
-        level = document.getElementById("level").value;
 
-        corpo = document.getElementById("corpo").value;
 
-        tecnica = document.getElementById("tecnica").value;
 
-        intelecto = document.getElementById("intelecto").value;
+    <div id="table">
+      <table>
+        <tr>
+          <td>Vida:</td>
+          <td id="vida"></td>
+        </tr>
+        <tr>
+          <td>Atordoamento:</td>
+          <td id="atordoamento"></td>
+        </tr>
+        <tr>
+          <td>Controle:</td>
+          <td id="controle"></td>
+        </tr>
+        <tr>
+          <td>Sanidade:</td>
+          <td id="sanidade"></td>
+        </tr>
+        <tr>
+          <td>Pe:</td>
+          <td id="pe"></td>
+        </tr>
+        <tr>
+          <td>Agilidade</td>
+          <td id="agilidade"></td>
+        </tr>
+      </table>
 
-        presença = document.getElementById("presença").value;
-        //formúlas das contas
-        calculoVida = 20 + 3 * corpo * level;
-        calculoAtordoamento = 2 * corpo + 2 * presença;
-        calculoControle = 2 * intelecto + 2 * presença;
-        calculoSanidade = 2 * presença + 2 * intelecto;
-        calculoPe = 2 * corpo + 2 * presença;
-        calculoAgilidade = parseInt(1 * tecnica + corpo / 2);
+    </div>
+  </div>
+  <script>
+    window.addEventListener("load", () => {
+      registerSW();
+    });
 
-        //retorno de valor na tabela
-        vida = document.getElementById("vida");
-        vida.innerHTML = calculoVida;
-        atordoamento = document.getElementById("atordoamento");
-        atordoamento.innerHTML = calculoAtordoamento;
-        controle = document.getElementById("controle");
-        controle.innerHTML = calculoControle;
-        sanidade = document.getElementById("sanidade");
-        sanidade.innerHTML = calculoSanidade;
-        pe = document.getElementById("pe");
-        pe.innerHTML = calculoPe;
-        agilidade = document.getElementById("agilidade");
-        agilidade.innerHTML = calculoAgilidade;
-      }
-    </script>
-
-    <script>
-      window.addEventListener("load", () => {
-        registerSW();
-      });
-
-      // Register the Service Worker
-      async function registerSW() {
-        if ("serviceWorker" in navigator) {
-          try {
-            await navigator.serviceWorker.register("serviceworker.js");
-          } catch (e) {
-            console.log("SW registration failed");
-          }
+    // Register the Service Worker
+    async function registerSW() {
+      if ("serviceWorker" in navigator) {
+        try {
+          await navigator.serviceWorker.register("serviceworker.js");
+        } catch (e) {
+          console.log("SW registration failed");
         }
       }
-    </script>
-  </body>
+    }
+  </script>
+</body>
+
 </html>
