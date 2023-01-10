@@ -1,6 +1,5 @@
 //update das contas ao mudar valor
 document.addEventListener("input", update);
-document.addEventListener("load", firstload);
 
 vida = document.getElementById("vida");
 atordoamento = document.getElementById("atordoamento");
