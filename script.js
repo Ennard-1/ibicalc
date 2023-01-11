@@ -1,13 +1,15 @@
 //update das contas ao mudar valor
 document.addEventListener("input", update);
 
-vida = document.getElementById("vida");
+function update() {
+
+  vida = document.getElementById("vida");
 atordoamento = document.getElementById("atordoamento");
 controle = document.getElementById("controle");
 sanidade = document.getElementById("sanidade");
 pe = document.getElementById("pe");
 agilidade = document.getElementById("agilidade");
-function update() {
+
   //atualização dos inputs
   level = document.getElementById("level").value;
   corpo = document.getElementById("corpo").value;
