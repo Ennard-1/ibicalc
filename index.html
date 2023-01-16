@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width
      =device-width, initial-scale=1" />
-  
+
   <title>Calculo de ficha</title>
   <meta name="Ibicalc" content="#aa7700" />
   <meta name="theme-color" content="black" />
@@ -23,11 +23,11 @@
   <div id="topbar">
     <h1>Ibicalc</h1>
 
-    <img id="ibiporalogo" src="images/Ibiporã-black-logo.png" width="10%">
+    <img id="ibiporalogo" src="images/Ibiporã-black-logo.png">
   </div>
   <div id="main">
     <div id="inputs">
-      <label for="level">Level:</label>
+      <label for="level">Level</label>
       <br>
       <input type="text" pattern="number" id="level" value="1" />
       <br />
@@ -35,52 +35,50 @@
       <br>
       <input type="text" pattern="number" id="corpo" value="1" />
       <br />
-      <label for="Técnica">Técnica:</label>
+      <label for="Técnica">Técnica</label>
       <br>
       <input type="text" pattern="number" id="tecnica" value="1" />
       <br />
-      <label for="intelecto">Intelecto:</label>
+      <label for="intelecto">Intelecto</label>
       <br>
       <input type="text" pattern="number" id="intelecto" value="1" />
       <br />
-      <label for="presença">Presença:</label>
+      <label for="presença">Presença</label>
       <br>
       <input type="text" pattern="number" id="presença" value="1" />
     </div>
-
-
-
 
     <div id="table">
       <table>
         <tr>
           <td>Vida:</td>
-          <td id="vida"></td>
+          <td id="vida">__</td>
         </tr>
         <tr>
           <td>Atordoamento:</td>
-          <td id="atordoamento"></td>
+          <td id="atordoamento">__</td>
         </tr>
         <tr>
           <td>Controle:</td>
-          <td id="controle"></td>
+          <td id="controle">__</td>
         </tr>
         <tr>
           <td>Sanidade:</td>
-          <td id="sanidade"></td>
+          <td id="sanidade">__</td>
         </tr>
         <tr>
           <td>Pe:</td>
-          <td id="pe"></td>
+          <td id="pe">__</td>
         </tr>
         <tr>
-          <td>Agilidade</td>
-          <td id="agilidade"></td>
+          <td>Agilidade:</td>
+          <td id="agilidade">__</td>
         </tr>
       </table>
 
     </div>
   </div>
+
   <script>
     window.addEventListener("load", () => {
       registerSW();

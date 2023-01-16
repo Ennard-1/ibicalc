@@ -2,13 +2,13 @@
 document.addEventListener("input", update);
 
 function update() {
-
+  //identificação dos inputs
   vida = document.getElementById("vida");
-atordoamento = document.getElementById("atordoamento");
-controle = document.getElementById("controle");
-sanidade = document.getElementById("sanidade");
-pe = document.getElementById("pe");
-agilidade = document.getElementById("agilidade");
+  atordoamento = document.getElementById("atordoamento");
+  controle = document.getElementById("controle");
+  sanidade = document.getElementById("sanidade");
+  pe = document.getElementById("pe");
+  agilidade = document.getElementById("agilidade");
 
   //atualização dos inputs
   level = document.getElementById("level").value;
@@ -21,8 +21,8 @@ agilidade = document.getElementById("agilidade");
   calculoVida = 20 + 3 * corpo * level;
   calculoAtordoamento = 2 * corpo + 2 * presença;
   calculoControle = 2 * intelecto + 2 * presença;
-  calculoSanidade = parseInt((2 * presença + 2 * intelecto)+(((1*presença + 1*intelecto)/2)*level));
-  calculoPe = parseInt((2 * corpo + 2 * presença)+((1*corpo+1*presença)/2)*level);
+  calculoSanidade = parseInt((2 * presença + 2 * intelecto) + (((1 * presença + 1 * intelecto) / 2) * level));
+  calculoPe = parseInt((2 * corpo + 2 * presença) + ((1 * corpo + 1 * presença) / 2) * level);
   calculoAgilidade = parseInt(1 * tecnica + corpo / 2);
 
   //retorno do valor
@@ -32,4 +32,5 @@ agilidade = document.getElementById("agilidade");
   if (calculoSanidade) { sanidade.innerHTML = calculoSanidade; } else { sanidade.innerHTML = "Erro" }
   if (calculoPe) { pe.innerHTML = calculoPe; } else { pe.innerHTML = "Erro" }
   if (calculoAgilidade) { agilidade.innerHTML = calculoAgilidade; } else { agilidade.innerHTML = "Erro" }
+
 }
