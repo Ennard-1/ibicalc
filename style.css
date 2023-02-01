@@ -1,71 +1,83 @@
-:root {
-  font-size: 20px;
-}
-
 body {
-  font-family: Monospace;
-  background-color: black;
-  color: white;
+  background: rgb(0, 0, 0);
+  font: normal 20px Monospace;
+  color: aliceblue;
   margin: 0;
-  font-size: 1rem;
+  text-align: center;
 }
-
-#topbar {
-  height: 10vh;
-  margin-bottom: 1vh;
+#main {
+  background-color: rgba(63, 63, 63, 0.733);
+  border-radius: 10px;
+  padding: 5px;
+  margin: auto;
+  width: 90vw;
+  max-width: 1000px;
+}
+#atributes {
+  background-color: black;
+  margin: 10px;
+  border-radius: 10px;
   display: flex;
   justify-content: space-between;
+  padding: 10px;
 }
-
-h1 {
-  font-size: 2rem;
-}
-
-#main {
-  height: 70vh;
-  display: flex;
-  justify-content: space-around;
-  margin-top: 5vh;
-  margin-bottom: 5vh;
-  margin-left: 5vw;
-  margin-right: 5vw;
+#atributename {
   border: 1px solid white;
-  font-size: 1rem;
+  padding: 5px;
+  border-radius: 10px;
+  width: 50%;
 }
-
-#inputs {
-  text-align: center;
-  align-self: center;
-}
-
-#table {
+#atributevalue {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  padding: 5px;
 }
-
-label {
+.input1 {
   text-align: center;
-}
-
-input {
-  text-align: center;
-  background-color: black;
+  background-color: transparent;
   border: none;
   border-bottom: 4px solid white;
-  border-radius: 10%;
-  max-width: 30px;
-  width: 10vw;
-  font-size: 1rem;
+  max-width: 50px;
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
   color: white;
-  margin: 1px;
 }
-
-table {
-  align-self: center;
+.input2 {
   text-align: center;
-  background-color: white;
+  background-color: transparent;
+  border: none;
+  border-bottom: 4px solid black;
+  max-width: 50px;
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+  color: black;
 }
-
-td {
-  background-color: black;
+#stats {
+  margin: 10px;
+  background-color: white;
+  border-radius: 10px;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+#statsname {
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 10px;
+  width: 50%;
+}
+#statsvalue {
+  display: flex;
+  flex-flow: column;
+  padding: 5px;
+}
+p {
+  margin: 1px;
+  border-bottom: 4px;
+  width: fit-content;
+  font-size: 1em;
+  padding: 0;
 }

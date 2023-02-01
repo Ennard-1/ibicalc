@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html>
-
 <head lang="pt-BR">
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <meta name="viewport" content="width
-     =device-width, initial-scale=1" />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Calculo de ficha</title>
   <meta name="Ibicalc" content="#aa7700" />
   <meta name="theme-color" content="black" />
@@ -16,74 +13,51 @@
   <link rel="manifest" href="images/site.webmanifest">
   <link rel="stylesheet" href="style.css">
   <script src="script.js"></script>
-
 </head>
-
 <body>
-  <div id="topbar">
+  <header id="topbar">
     <h1>Ibicalc</h1>
-
-    <img id="ibiporalogo" src="images/Ibiporã-black-logo.png">
-  </div>
+  </header>
   <div id="main">
-    <div id="inputs">
-      <label for="level">Level</label>
-      <br>
-      <input type="text" pattern="number" id="level" value="1" />
-      <br />
-      <label for="Corpo">Corpo</label>
-      <br>
-      <input type="text" pattern="number" id="corpo" value="1" />
-      <br />
-      <label for="Técnica">Técnica</label>
-      <br>
-      <input type="text" pattern="number" id="tecnica" value="1" />
-      <br />
-      <label for="intelecto">Intelecto</label>
-      <br>
-      <input type="text" pattern="number" id="intelecto" value="1" />
-      <br />
-      <label for="presença">Presença</label>
-      <br>
-      <input type="text" pattern="number" id="presença" value="1" />
+    <div id="atributes">
+      <div id="atributename">
+        <p>Level</p>
+        <p>Corpo</p>
+        <p>Técnica</p>
+        <p>Intelecto</p>
+        <p>Presença</p>
+      </div>
+      <div id="atributevalue">
+        <input class="input1" type="text" pattern="number" id="level" value="1" />
+        <input class="input1" type="text" pattern="number" id="corpo" value="1" />
+        <input class="input1" type="text" pattern="number" id="tecnica" value="1" />
+        <input class="input1" type="text" pattern="number" id="intelecto" value="1" />
+        <input class="input1" type="text" pattern="number" id="presença" value="1" />
+      </div>
     </div>
-
-    <div id="table">
-      <table>
-        <tr>
-          <td>Vida:</td>
-          <td id="vida">__</td>
-        </tr>
-        <tr>
-          <td>Atordoamento:</td>
-          <td id="atordoamento">__</td>
-        </tr>
-        <tr>
-          <td>Controle:</td>
-          <td id="controle">__</td>
-        </tr>
-        <tr>
-          <td>Sanidade:</td>
-          <td id="sanidade">__</td>
-        </tr>
-        <tr>
-          <td>Pe:</td>
-          <td id="pe">__</td>
-        </tr>
-        <tr>
-          <td>Agilidade:</td>
-          <td id="agilidade">__</td>
-        </tr>
-      </table>
-
+    <div id="stats">
+      <div id="statsname">
+        <p>Vida :</p>
+        <p>Atordoamento :</p>
+        <p>Controle :</p>
+        <p>Sanidade :</p>
+        <p>Pe :</p>
+        <p>Agilidade :</p>
+      </div>
+      <div id="statsvalue">
+        <input class="input2" type="text" pattern="number" id="vida" value="1" disabled="" />
+        <input class="input2" type="text" pattern="number" id="atordoamento" value="1" disabled="" />
+        <input class="input2" type="text" pattern="number" id="controle" value="1" disabled="" />
+        <input class="input2" type="text" pattern="number" id="sanidade" value="1" disabled="" />
+        <input class="input2" type="text" pattern="number" id="pe" value="1" disabled="" />
+        <input class="input2" type="text" pattern="number" id="agilidade" value="1" disabled="" />
+      </div>
     </div>
   </div>
-
   <script>
     window.addEventListener("load", () => {
       registerSW();
     });
-
     // Register the Service Worker
     async function registerSW() {
       if ("serviceWorker" in navigator) {
@@ -96,5 +70,4 @@
     }
   </script>
 </body>
-
 </html>
