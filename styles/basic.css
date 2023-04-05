@@ -1,0 +1,91 @@
+@import url(https://fonts.bunny.net/css?family=abyssinica-sil:400);
+
+:root {
+  --primary-color: #e5e5cb;
+  --bg-color: #1a120b;
+  --secondary-color: #3c2a21;
+  --accent-color: #d5cea3;
+  --font-family: "Abyssinica SIL", serif;
+}
+
+body {
+  color: var(--primary-color);
+  background-color: var(--bg-color);
+  font-family: var(--font-family);
+}
+
+header {
+  background-color: var(--secondary-color);
+  padding: 20px;
+  color: var(--primary-color);
+  font-size: 2em;
+  align-content: center;
+  display: flex;
+}
+
+.navMenu {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: var(--accent-color);
+  margin-top: 5vh;
+  height: 50vh;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.navMenuButton{
+  padding-right: 20px;
+  display: block;
+  position: absolute;
+  right: 0;
+  font-size: 1em;
+}
+
+.navItem {
+  padding: 20px;
+  color: var(--bg-color);
+  text-decoration: none;
+  font-size: 2em;
+  display: block;
+  
+}
+
+.Selected {
+  color: var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.footerElement {
+  font-size: 1em;
+  text-align: center;
+}
+
+.footerLink {
+  text-decoration: none;
+  color: var(--accent-color);
+  border-bottom: 1px solid var(--accent-color);
+}
+
+@media (width<850px) and (orientation: portrait) {
+  header {
+    margin-bottom: 1vh;
+    padding: 10px;
+    font-size: 1.5em;
+  }
+  .navMenu{
+    margin-top: 0;
+    height: unset;
+    width: 100vw;
+    border-radius: 0;
+  }
+  footer {
+    margin-top: 1vh;
+  }
+
+  header,
+  footer {
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+}

@@ -1,73 +1,126 @@
 <!DOCTYPE html>
 <html>
-<head lang="pt-BR">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Calculo de ficha</title>
-  <meta name="Ibicalc" content="#aa7700" />
-  <meta name="theme-color" content="black" />
-  <link rel="manifest" href="manifest.json">
-  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-  <link rel="manifest" href="images/site.webmanifest">
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
-</head>
-<body>
-  <header id="topbar">
-    <h1>Ibicalc</h1>
-  </header>
-  <div id="main">
-    <div id="atributes">
-      <div id="atributename">
-        <p>Level</p>
-        <p>Corpo</p>
-        <p>Técnica</p>
-        <p>Intelecto</p>
-        <p>Presença</p>
-      </div>
-      <div id="atributevalue">
-        <input class="input1" type="text" pattern="number" id="level" value="1" />
-        <input class="input1" type="text" pattern="number" id="corpo" value="1" />
-        <input class="input1" type="text" pattern="number" id="tecnica" value="1" />
-        <input class="input1" type="text" pattern="number" id="intelecto" value="1" />
-        <input class="input1" type="text" pattern="number" id="presença" value="1" />
-      </div>
+  <head lang="pt-BR">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ibicalc</title>
+    <meta name="Ibicalc" content="#aa7700" />
+    <meta name="theme-color" content="black" />
+    <link rel="manifest" href="scripts/manifest.json" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="images/site.webmanifest" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+      integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="styles/basic.css" />
+    <link rel="stylesheet" href="styles/ibicalc.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Ibicalc</h1>
+      <a class="navMenuButton" id="navMenuButton">
+        <i class="fa fa-bars"></i>
+      </a>
+     
+    </header>
+    <div class="navMenu" id="navMenu">
+      <a class="navItem" href="">home</a>
+      <a class="navItem" href="pages/ibicalcFicha.html" id="saveForm">Salvar Ficha</a>
     </div>
-    <div id="stats">
-      <div id="statsname">
-        <p>Vida :</p>
-        <p>Atordoamento :</p>
-        <p>Controle :</p>
-        <p>Sanidade :</p>
-        <p>Pe :</p>
-        <p>Agilidade :</p>
+    <main>
+    
+      <div class="calc_display">
+        <div class="box">
+          <div class="bar">
+            <label class="inputLabel" for="level">Level:</label>
+            <input type="text" class="inputBar" id="levelBar" />
+          </div>
+
+          <div class="bar">
+            <label class="inputLabel" for="body">Corpo:</label>
+            <input type="text" class="inputBar" id="bodyBar" />
+          </div>
+
+          <div class="bar">
+            <label class="inputLabel" for="technique">Técnica:</label>
+            <input type="text" class="inputBar" id="techniqueBar" />
+          </div>
+          <div class="bar">
+            <label class="inputLabel" for="intellect">Intelecto:</label>
+            <input type="text" class="inputBar" id="intellectBar" />
+          </div>
+          <div class="bar">
+            <label class="inputLabel" for="presence">Presença:</label>
+            <input type="text" class="inputBar" id="presenceBar" />
+          </div>
+        </div>
+        <div class="isolationBar"></div>
+        <div class="box">
+          <div class="bar">
+            <label class="inputLabel" for="life">Vida:</label>
+            <span class="spanBar" id="life"></span>
+          </div>
+
+          <div class="bar">
+            <label class="inputLabel" for="stun">Atordoar:</label>
+            <span class="spanBar" id="stun"></span>
+          </div>
+
+          <div class="bar">
+            <label class="inputLabel" for="control">Controle:</label>
+            <span class="spanBar" id="control"></span>
+          </div>
+          <div class="bar">
+            <label class="inputLabel" for="sanity">Sanidade:</label>
+            <span class="spanBar" id="sanity"></span>
+          </div>
+          <div class="bar">
+            <label class="inputLabel" for="pe">Pe:</label>
+            <span class="spanBar" id="pe"></span>
+          </div>
+          <div class="bar">
+            <label class="inputLabel" for="agility">Agilidade:</label>
+            <span class="spanBar" id="agility"></span>
+          </div>
+        </div>
       </div>
-      <div id="statsvalue">
-        <input class="input2" type="text" pattern="number" id="vida" value="1" disabled="" />
-        <input class="input2" type="text" pattern="number" id="atordoamento" value="1" disabled="" />
-        <input class="input2" type="text" pattern="number" id="controle" value="1" disabled="" />
-        <input class="input2" type="text" pattern="number" id="sanidade" value="1" disabled="" />
-        <input class="input2" type="text" pattern="number" id="pe" value="1" disabled="" />
-        <input class="input2" type="text" pattern="number" id="agilidade" value="1" disabled="" />
+    </main>
+
+    <footer>
+      <div class="footerElement">
+        Feito por <a class="footerLink" href="https://github.com/Ennard-1">Ennard</a>
       </div>
-    </div>
-  </div>
-  <script>
-    window.addEventListener("load", () => {
-      registerSW();
-    });
-    // Register the Service Worker
-    async function registerSW() {
-      if ("serviceWorker" in navigator) {
-        try {
-          await navigator.serviceWorker.register("serviceworker.js");
-        } catch (e) {
-          console.log("SW registration failed");
-        }
-      }
-    }
-  </script>
-</body>
+    </footer>
+    <script src="scripts/basic.js"></script>
+    <script src="scripts/sw.js"></script>
+    <script src="./scripts/ibicalc.js" type="module"></script>
+  </body>
 </html>

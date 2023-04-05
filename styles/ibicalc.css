@@ -1,0 +1,117 @@
+.calc_display {
+  display: flex;
+  justify-content: center;
+}
+
+.box {
+  border-radius: 20px;
+  padding: 20px;
+  font-size: 2em;
+  width: 500px;
+}
+
+.bar {
+  align-content: center;
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 2px;
+}
+
+.inputBar {
+  text-align: center;
+  font-size: 1em;
+  width: 50%;
+  max-width: 200px;
+  height: 50px;
+  background-color: var(--bg-color);
+  border: none;
+  padding: 2px;
+  color: var(--accent-color);
+  border-left: 2px solid var(--accent-color);
+}
+@keyframes fadeBar {
+  from {
+    background-color: var(--bg-color);
+    color: var(--secondary-color);
+  }
+  to {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+  }
+}
+
+.inputBar:hover {
+  animation-name: fadeBar;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+.inputBar:focus {
+  outline: none;
+  animation-name: fadeBar;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  /* border-radius: 10px;background-color: var(--accent-color);color: var(--secondary-color); */
+}
+
+.spanBar {
+  font-size: 1em;
+  width: 50%;
+  max-width: 200px;
+  height: 50px;
+  background-color: var(--bg-color);
+  border: none;
+  padding: 2px;
+  border-left: 2px solid var(--accent-color);
+  color: var(--primary-color);
+  text-align: center;
+}
+.inputLabel {
+  align-self: center;
+}
+
+@media (width<850px) and (orientation: portrait) {
+  .calc_display {
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-around;
+  }
+
+  .box {
+    width: auto;
+    height: min-content;
+    justify-content: space-between;
+    padding: 0;
+  }
+
+  .isolationBar {
+    border: 1px solid var(--accent-color);
+  }
+
+  .bar {
+    margin: 0;
+    justify-content: space-between;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .inputBar {
+    font-size: 1em;
+    height: auto;
+    padding: 0;
+  }
+  .spanBar {
+    height: calc(inputBar(height));
+    padding: 0;
+  }
+}
+
+@media (height<510px) and (orientation: landscape) {
+  .calc_display {
+    height: unset;
+  }
+  .bar {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
