@@ -1,42 +1,69 @@
 const stat = JSON.parse(localStorage.getItem("stat"));
 
-copyFull = document.getElementById("copyFull");
+const copyForm = async (content) => {
+  try {
+    await navigator.clipboard.writeText(content);
+    alert("Conteúdo copiado para a área de transferência!");
+  } catch (err) {
+    console.error("Erro ao copiar conteúdo: ", err);
+  }
+};
+
+const generateFormHTML = (formType) => {
+  const {
+    Level,
+    Corpo,
+    Técnica,
+    Intelecto,
+    Presença,
+    Vida,
+    Atordoamento,
+    Controle,
+    Sanidade,
+    Pe,
+    Agilidade,
+  } = stat[0];
+
+  const formHTML = `
+    --- <br>
+    [_Nome_] <br>
+    <br>
+    ${
+      formType === "full"
+        ? `
+      Level = ${Level} <br>
+      Corpo = ${Corpo} <br>
+      Técnica = ${Técnica} <br>
+      Intelecto = ${Intelecto} <br>
+      Presença = ${Presença} <br>
+    `
+        : ""
+    }
+    <br>
+    Vida = ${Vida} <br>
+    Atordoamento = ${Atordoamento} <br>
+    Controle = ${Controle} <br>
+    Sanidade = ${Sanidade} <br>
+    Pe = ${Pe} <br>
+    Agilidade = ${Agilidade} <br>
+    ---<br>
+  `;
+
+  return formHTML;
+};
+
+const fullForm = document.getElementById("fullForm");
+fullForm.innerHTML = generateFormHTML("full");
+
+const combatForm = document.getElementById("combatForm");
+combatForm.innerHTML = generateFormHTML("combat");
+
+const copyFull = document.getElementById("copyFull");
 copyFull.addEventListener("click", () => {
-  navigator.clipboard.writeText(fullForm.textContent);
+  copyForm(fullForm.innerHTML);
 });
 
-copyCombat = document.getElementById("copyCombat");
+const copyCombat = document.getElementById("copyCombat");
 copyCombat.addEventListener("click", () => {
-  navigator.clipboard.writeText(combatForm.textContent);
+  copyForm(combatForm.innerHTML);
 });
-
-var fullForm = document.getElementById("fullForm");
-fullForm.innerHTML = `--- <br>
-[_Nome_] <br>
-<br>
- Level = ${stat[0].Level} <br>
- Corpo = ${stat[0].Corpo} <br>
- Técnica = ${stat[0].Técnica} <br>
- Intelecto = ${stat[0].Intelecto} <br>
- Presença = ${stat[0].Presença} <br>
-<br>
- Vida = ${stat[0].Vida} <br>
- Atordoamento = ${stat[0].Atordoamento} <br>
- Controle = ${stat[0].Controle} <br>
- Sanidade = ${stat[0].Sanidade} <br>
- Pe = ${stat[0].Pe} <br>
- Agilidade = ${stat[0].Agilidade} <br>
- ---<br>
- `;
-
- var combatForm = document.getElementById('combatForm')
- combatForm.innerHTML =`--- <br>
- [_Nome_] <br>
- <br>
- Vida = ${stat[0].Vida}/${stat[0].Vida}<br>
- Atordoamento = ${stat[0].Atordoamento}/${stat[0].Atordoamento}<br>
- Controle = ${stat[0].Controle}/${stat[0].Controle}<br>
- Sanidade = ${stat[0].Sanidade}/${stat[0].Sanidade}<br>
- Pe = ${stat[0].Pe}/${stat[0].Pe}<br>
- Agilidade = ${stat[0].Agilidade}<br>
- ---<br>`

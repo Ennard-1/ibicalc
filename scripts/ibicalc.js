@@ -11,46 +11,67 @@ const sanity = document.getElementById("sanity");
 const pe = document.getElementById("pe");
 const agility = document.getElementById("agility");
 
-document.addEventListener("input", display);
-var calculateLife;
-var calculateStun;
-var calculateControl;
-var calculateSanity;
-var calculatePe;
-var calculateAgility;
-function display() {
-  calculateLife = 20 + 3 * body.value + body.value * level.value;
-  calculateStun = 2 * intellect.value + 2 * technique.value;
-  calculateControl = 2 * intellect.value + 2 * presence.value + 2;
-  calculateSanity = parseInt(2 * presence.value + 2 * intellect.value + 2);
-  calculatePe = parseInt(
+// Função que calcula os valores de atributos
+function calculateStats() {
+  const calculateLife = 20 + 3 * body.value + body.value * level.value;
+  const calculateStun = 2 * intellect.value + 2 * technique.value;
+  const calculateControl = 2 * intellect.value + 2 * presence.value + 2;
+  const calculateSanity = parseInt(
+    2 * presence.value + 2 * intellect.value + 2
+  );
+  const calculatePe = parseInt(
     2 * body.value +
       2 * presence.value +
       ((1 * body.value + 1 * presence.value) / 2) * level.value
   );
-  calculateAgility = parseInt(1 * technique.value + 1 + (1 * body.value) / 2);
-
-  life.innerHTML = calculateLife;
-  stun.innerHTML = calculateStun;
-  control.innerHTML = calculateControl;
-  sanity.innerHTML = calculateSanity;
-  pe.innerHTML = calculatePe;
-  agility.innerHTML = calculateAgility;
+  const calculateAgility = parseInt(
+    1 * technique.value + 1 + (1 * body.value) / 2
+  );
+  return {
+    calculateLife,
+    calculateStun,
+    calculateControl,
+    calculateSanity,
+    calculatePe,
+    calculateAgility,
+  };
 }
 
-saveForm = document.getElementById("saveForm").addEventListener("click", () => {
-  var stats = [{
-    Level : level.value ,
-    Corpo : body.value ,
-    Técnica : technique.value ,
-    Intelecto : intellect.value ,
-    Presença : presence.value ,
-    Vida : calculateLife ,
-    Atordoamento : calculateStun ,
-    Controle : calculateControl ,
-    Sanidade : calculateSanity ,
-    Pe : calculatePe ,
-    Agilidade : calculateAgility ,
-}];
+// Função que atualiza os valores exibidos na tela
+function updateStats() {
+  const stats = calculateStats();
+  life.innerHTML = stats.calculateLife;
+  stun.innerHTML = stats.calculateStun;
+  control.innerHTML = stats.calculateControl;
+  sanity.innerHTML = stats.calculateSanity;
+  pe.innerHTML = stats.calculatePe;
+  agility.innerHTML = stats.calculateAgility;
+}
+
+// Event listener que chama a função updateStats ao mudar o valor em qualquer barra de progresso
+document.addEventListener("input", updateStats);
+
+// Função que salva as estatísticas em localStorage
+function saveStats() {
+  const stats = [
+    {
+      Level: level.value,
+      Corpo: body.value,
+      Técnica: technique.value,
+      Intelecto: intellect.value,
+      Presença: presence.value,
+      Vida: calculateStats().calculateLife,
+      Atordoamento: calculateStats().calculateStun,
+      Controle: calculateStats().calculateControl,
+      Sanidade: calculateStats().calculateSanity,
+      Pe: calculateStats().calculatePe,
+      Agilidade: calculateStats().calculateAgility,
+    },
+  ];
   localStorage.setItem("stat", JSON.stringify(stats));
-});
+}
+
+// Event listener que salva as estatísticas em localStorage ao clicar no botão "Salvar"
+saveForm = document
+  .getElementById("saveForm")
+  .addEventListener("click", saveStats);
